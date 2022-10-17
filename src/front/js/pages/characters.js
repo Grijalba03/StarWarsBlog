@@ -16,7 +16,14 @@ export const Characters = () => {
 
   return (
     <div className="container">
-      
+      <div className="col-3">
+       <img
+            src={`https://starwars-visualguide.com/assets/img/characters/${router?.theid}.jpg`}
+            className="card-img-top"
+            alt="..."
+            width={50} 
+            />
+            </div>
       <p>name: {store.character?.name} </p>
       <p>gender: {store.character?.gender} </p>
       <p>height: {store.character?.height} </p>
