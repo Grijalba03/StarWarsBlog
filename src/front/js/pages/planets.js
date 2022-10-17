@@ -6,6 +6,29 @@ import { Context } from "../store/appContext";
 export const Planets = () => {
   const { store, actions } = useContext(Context);
   const router = useParams();
-  console.log(router);
-  return <div className="container">Planets</div>;
+  console.log(store.planet);
+
+  useEffect(() => {
+    if (router.theid) {
+      actions.getPlanet(router.theid);
+    }
+  }, [router.theid]);
+
+  return (
+    <div className="container">
+      
+      <p>name: {store.planet?.name} </p>
+      <p>diameter: {store.planet?.diameter} </p>
+      <p>climate: {store.planet?.climate} </p>
+      <p>gravity: {store.planet?.gravity} </p>
+      <p>population: {store.planet?.population} </p>
+      <p>terrain: {store.planet?.terrain} </p>
+      <p>orbital_period: {store.planet?.orbital_period} </p>
+      <p>rotation_period: {store.planet?.rotation_period} </p>
+      <p>surface_water: {store.planet?.surface_water} </p>
+      <p>residents: {store.planet?.residents} </p>
+      <p>created: {store.planet?.created} </p>
+      <p>edited: {store.planet?.edited} </p>
+    </div>
+  );
 };

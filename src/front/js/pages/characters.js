@@ -16,9 +16,19 @@ export const Characters = () => {
 
   return (
     <div className="container">
-      paginas characters name: {store.character?.name}
+      
       <p>name: {store.character?.name} </p>
+      <p>gender: {store.character?.gender} </p>
+      <p>height: {store.character?.height} </p>
+      <p>eye_color: {store.character?.eye_color} </p>
+      <p>hair_color: {store.character?.hair_color} </p>
+      <p>skin_color: {store.character?.skin_color} </p>
       <p>mass: {store.character?.mass} </p>
+      <p>birth_year: {store.character?.birth_year} </p>
+      <p>homeworld: {store.character?.homeworld} </p>
+      <p>description: {store.character?.descripcion} </p>
+      <p>created: {store.character?.created} </p>
+      <p>edited: {store.character?.edited} </p>
     </div>
   );
 };

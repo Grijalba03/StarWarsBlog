@@ -8,7 +8,9 @@ import { SpaceshipsCard } from "../component/Spaceshipcard";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
-  console.log(store.characters);
+  console.log(store.characters),
+  console.log(store.planets),
+  console.log(store.vehicles);
 
   {
     /* Here are the imported cards----------------------------------------------------------------------------------------------------- */

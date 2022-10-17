@@ -18,6 +18,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       planets: [],
       vehicles: [],
       character: [],
+      planet: [],
+      vehicle: [],
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -29,6 +31,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((resp) => resp.json())
           .then((resp) => setStore({ character: resp.result.properties }))
           .catch((err) => console.error(err));
+      }, 
+      getPlanet: async (uid) => { 
+        fetch(`https://www.swapi.tech/api/planet/${uid}`)
+          .then((resp) => resp.json())
+          .then((resp) => setStore({ planet: resp.result.properties }))
+          .catch((err) => console.error(err)); 
+      },
+      getSpaceship: async (uid) => { 
+        fetch (`https://www.swapi.tech/api/vehicle/${uid}`)
+        .then((resp) => resp.json())
+        .then ((resp) => setStore({ spaceship: resp.result.properties }))
+        .catch((err) => console.error(err));
+
       },
       getMessage: async () => {
         fetch("https://www.swapi.tech/api/people")
