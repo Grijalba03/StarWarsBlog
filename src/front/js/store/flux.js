@@ -27,6 +27,16 @@ const getState = ({ getStore, getActions, setStore }) => {
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
+      addFav:(item) => { 
+        let aux = getStore().favorites
+        aux.push(item)
+        setStore({ favorites: aux})
+    },
+      removeFav:(uid) => { 
+        let aux = getStore().favorites
+        let x = aux.filter((element)=> element.uid != uid)
+        setStore({ favorites: x})
+    },
       getCharacter: async (uid) => { 
         fetch(`https://www.swapi.tech/api/people/${uid}`)
           .then((resp) => resp.json())
