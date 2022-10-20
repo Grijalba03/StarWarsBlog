@@ -34,7 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
       removeFav:(uid) => { 
         let aux = getStore().favorites
-        let x = aux.filter((element)=> element.uid != uid)
+        let x = aux.filter((element,i)=> element.uid != uid)
         setStore({ favorites: x})
     },
       getCharacter: async (uid) => { 

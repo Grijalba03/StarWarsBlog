@@ -24,13 +24,16 @@ export const Navbar = () => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Favorites
+            Favorites {store.favorites.length}
           </button>
 
           <ul className="dropdown-menu text-center">
             {store.favorites.map((element, i) => {
               /* dentro del li tengo que poner un button llmando a la action remove fav del flux pasandole por parametrs el uid que sale de element.uid */
-              return <li> {element.label}</li>;
+              return <li> 
+                {element.label}
+                <button className="btn" type="button" onClick={() => actions.removeFav(element.uid)}>❌</button>
+              </li>;
             })}
           </ul>
         </div>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const SpaceshipsCard = ({ uid, name }) => {
+  const { store, actions } = useContext(Context);
   return (
     <div className="col mx-1 px-1">
       <div className="card" style={{ width: "18rem" }}>
@@ -25,10 +27,13 @@ export const SpaceshipsCard = ({ uid, name }) => {
           >
             Learn more
           </a>
-          <a href="#" className="card-link btn btn-outline-warning">
+          <button
+            className="card-link btn btn-outline-warning"
+            onClick={() => actions.addFav({ label: name, uid: uid })}
+          >
             {" "}
-            <i className="fa fa-heart" role="button" />
-          </a>
+            <i className="fa light fa-heart" role="button" />
+          </button>
         </div>
       </div>
     </div>
