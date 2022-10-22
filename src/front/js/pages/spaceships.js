@@ -16,7 +16,12 @@ export const Spaceships = () => {
 
   return (
     <div className="container">
-      
+      <img
+        src={`https://starwars-visualguide.com/assets/img/vehicles/${router?.theid}.jpg`}
+        className="card-img-top w-25"
+        alt="..."
+      />
+
       <p>name: {store.vehicle?.name} </p>
       <p>cargo_capacity: {store.vehicle?.cargo_capacity} </p>
       <p>consumables: {store.vehicle?.consumables} </p>

@@ -16,7 +16,13 @@ export const Planets = () => {
 
   return (
     <div className="container">
-      
+      <div className="col-3"></div>
+      <img
+        src={`https://starwars-visualguide.com/assets/img/planets/${router?.theid}.jpg`}
+        className="card-img-top w-25"
+        alt="..."
+      />
+
       <p>name: {store.planet?.name} </p>
       <p>diameter: {store.planet?.diameter} </p>
       <p>climate: {store.planet?.climate} </p>
