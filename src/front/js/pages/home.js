@@ -9,8 +9,8 @@ import { SpaceshipsCard } from "../component/Spaceshipcard";
 export const Home = () => {
   const { store, actions } = useContext(Context);
   console.log(store.characters),
-  console.log(store.planets),
-  console.log(store.vehicles);
+    console.log(store.planets),
+    console.log(store.vehicles);
 
   {
     /* Here are the imported cards----------------------------------------------------------------------------------------------------- */
@@ -20,9 +20,7 @@ export const Home = () => {
       <div>
         <h1>Characters</h1>
       </div>
-      <div
-        className=" d-flex flex-row flex-nowrap overflow-auto pb-5" 
-      >
+      <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5">
         {store.characters.map((element) => {
           return <CharactersCard name={element.name} uid={element.uid} />;
         })}
@@ -30,10 +28,7 @@ export const Home = () => {
 
       <div className="container">
         <h1>Planets</h1>
-        <div
-          className=" d-flex flex-row flex-nowrap overflow-auto pb-5 mb-3"
-          
-        >
+        <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5 mb-3">
           {store.planets.map((element) => {
             return <PlanetsCard name={element.name} uid={element.uid} />;
           })}
@@ -41,10 +36,7 @@ export const Home = () => {
 
         <div className="container">
           <h1>Spaceships</h1>
-          <div
-            className=" d-flex flex-row flex-nowrap overflow-auto pb-5 mb-3"
-          
-          >
+          <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5 mb-3">
             {store.vehicles.map((element) => {
               return <SpaceshipsCard name={element.name} uid={element.uid} />;
             })}
